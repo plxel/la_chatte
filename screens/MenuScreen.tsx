@@ -63,9 +63,9 @@ const menuItems = [
   },
 ]
 
-export default function TabOneScreen() {
+export default function MenuScreen({ navigation }) {
   const renderItem = ({ item }) => (
-    <View style={styles.menuItem}>
+    <View style={styles.menuItem} onStartShouldSetResponder={() => navigation.navigate('ItemScreen', { item })}>
       <Image style={styles.menuItemImage} source={{ uri: "https://source.unsplash.com/random/200x200" }} />
       <View style={{ flex: 1, flexWrap: 'wrap', justifyContent: 'space-between' }}>
         <Text style={styles.menuItemTitle}>{item.name}</Text>
