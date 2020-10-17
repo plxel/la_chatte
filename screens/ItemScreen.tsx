@@ -1,14 +1,17 @@
-import * as React from 'react';
-import { StyleSheet, Image, Button } from 'react-native';
+import * as React from "react";
+import { StyleSheet, Image, Button } from "react-native";
 
-import { Text, View } from '../components/Themed';
+import { Text, View } from "../components/Themed";
 
 export default function ItemScreen({ route }) {
   const { item } = route.params;
 
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={{ uri: "https://source.unsplash.com/random/400x400" }} />
+      <Image
+        style={styles.image}
+        source={{ uri: "https://source.unsplash.com/random/400x400" }}
+      />
       <Text style={styles.title}>{item.name}</Text>
       <Text style={styles.title}>{item.price}₽</Text>
       <Text style={styles.descr}>{item.descr}</Text>
@@ -16,7 +19,9 @@ export default function ItemScreen({ route }) {
       <Button
         title="Add to cart"
         accessibilityLabel="Add item to cart"
-        onPress={() => { /* TODO */ }}
+        onPress={() => {
+          /* TODO */
+        }}
       />
     </View>
   );
@@ -25,13 +30,13 @@ export default function ItemScreen({ route }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     padding: 15,
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 15,
     textAlign: "center",
   },
@@ -44,5 +49,4 @@ const styles = StyleSheet.create({
     height: 200,
     marginBottom: 20,
   },
-
 });

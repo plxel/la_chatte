@@ -1,24 +1,24 @@
-import * as Linking from 'expo-linking';
+import * as Linking from "expo-linking";
 
 export default {
-  prefixes: [Linking.makeUrl('/')],
+  prefixes: [Linking.makeUrl("/")],
   config: {
     screens: {
       Root: {
         screens: {
           Menu: {
             screens: {
-              MenuScreen: 'menu',
+              MenuScreen: "menu",
             },
           },
           Cart: {
             screens: {
-              CartScreen: 'cart',
+              CartScreen: "cart",
             },
           },
         },
       },
-      NotFound: '*',
+      NotFound: "*",
     },
   },
 };
