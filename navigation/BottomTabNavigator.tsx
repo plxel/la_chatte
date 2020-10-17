@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import * as React from "react";
 
+import { useAppContext } from '../contexts/useAppContext';
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
 import MenuScreen from "../screens/MenuScreen";
@@ -14,6 +15,7 @@ const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 export default function BottomTabNavigator() {
   const colorScheme = useColorScheme();
+  const { cart } = useAppContext();
 
   return (
     <BottomTab.Navigator
@@ -33,6 +35,7 @@ export default function BottomTabNavigator() {
         name="Cart"
         component={CartTabNavigator}
         options={{
+          tabBarBadge: cart.length > 0 ? cart.length : undefined,
           tabBarIcon: ({ color }) => (
             <TabBarIcon name="shoppingcart" color={color} />
           ),
