@@ -1,10 +1,11 @@
 import * as React from "react";
 import { StyleSheet, Image, Button } from "react-native";
-
+import { useAppContext } from '../contexts/useAppContext';
 import { Text, View } from "../components/Themed";
 
 export default function ItemScreen({ route }) {
   const { item } = route.params;
+  const { addItemToCart } = useAppContext();
 
   return (
     <View style={styles.container}>
@@ -20,7 +21,7 @@ export default function ItemScreen({ route }) {
         title="Add to cart"
         accessibilityLabel="Add item to cart"
         onPress={() => {
-          /* TODO */
+          addItemToCart(item)
         }}
       />
     </View>
